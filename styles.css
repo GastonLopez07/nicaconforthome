@@ -1,10 +1,9 @@
-/* =====================================================
-   NICA CONFORT HOME — Landing Premium
-   Paleta: crema, arena, oro suave, blanco roto
-   Tipografía: Cormorant Garamond + Montserrat
-===================================================== */
-
+/*=====================================================NICA CONFORT HOME — Landing Premium Paleta: crema,
+arena,
+oro suave,
+blanco roto Tipografía: Cormorant Garamond+Montserrat=====================================================*/
 *,
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -38,8 +37,25 @@ body {
   overflow-x: hidden;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+
+  .cursor,
+  .cursor-dot {
+    display: none;
+  }
+
+  .popup-close,
+  .popup-input,
+  .btn-enviar {
+    cursor: pointer;
+  }
+}
+
 /* =====================================================
-   CURSOR
+  CURSOR
 ===================================================== */
 .cursor {
   position: fixed;
@@ -74,7 +90,7 @@ body {
 }
 
 /* =====================================================
-   POPUP
+  POPUP
 ===================================================== */
 .popup-overlay {
   position: fixed;
@@ -237,7 +253,7 @@ body {
 }
 
 /* =====================================================
-   HEADER
+  HEADER
 ===================================================== */
 .header {
   position: fixed;
@@ -334,7 +350,7 @@ body {
 }
 
 /* =====================================================
-   HERO
+  HERO
 ===================================================== */
 .hero {
   min-height: 100vh;
@@ -609,7 +625,7 @@ body {
 }
 
 /* =====================================================
-   TICKER
+  TICKER
 ===================================================== */
 .ticker-wrap {
   background: var(--dark);
@@ -648,7 +664,7 @@ body {
 }
 
 /* =====================================================
-   GALLERY
+  GALLERY
 ===================================================== */
 .gallery-section {
   padding: 100px 48px 120px;
@@ -828,7 +844,7 @@ body {
 }
 
 /* =====================================================
-   VALUES SECTION
+  VALUES SECTION
 ===================================================== */
 .values-section {
   position: relative;
@@ -923,7 +939,7 @@ body {
 }
 
 /* =====================================================
-   CTA SECTION
+  CTA SECTION
 ===================================================== */
 .cta-section {
   padding: 130px 24px;
@@ -973,7 +989,7 @@ body {
 }
 
 /* =====================================================
-   FOOTER
+  FOOTER
 ===================================================== */
 .footer {
   background: var(--dark-mid);
@@ -1043,7 +1059,7 @@ body {
 }
 
 /* =====================================================
-   BOTÓN FLOTANTE WHATSAPP
+  BOTÓN FLOTANTE WHATSAPP
 ===================================================== */
 .wsp-float {
   position: fixed;
@@ -1090,7 +1106,7 @@ body {
 }
 
 /* =====================================================
-   SCROLL REVEAL
+  SCROLL REVEAL
 ===================================================== */
 .reveal {
   opacity: 0;
@@ -1105,7 +1121,44 @@ body {
 }
 
 /* =====================================================
-   RESPONSIVE
+  BURGER MENU
+===================================================== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--dark);
+  transition: all 0.3s var(--transition);
+  transform-origin: center;
+}
+
+.menu-toggle--open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.menu-toggle--open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-toggle--open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* =====================================================
+  RESPONSIVE
 ===================================================== */
 @media (max-width: 900px) {
   .header {
@@ -1169,8 +1222,51 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .menu-toggle {
+    display: flex;
+  }
+
   .nav {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(245, 239, 232, 0.98);
+    backdrop-filter: blur(12px);
+    padding: 20px 24px 28px;
+    gap: 0;
+    border-top: 1px solid var(--sand);
+    box-shadow: 0 8px 30px rgba(26, 23, 20, 0.1);
+  }
+
+  .nav.nav--open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--sand);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  .header-inner {
+    position: relative;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -24px;
+    right: -24px;
   }
 
   .hero {
