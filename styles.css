@@ -33,64 +33,11 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--cream);
   color: var(--text);
-  cursor: none;
   overflow-x: hidden;
 }
 
-@media (hover: none) and (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
-
-  .cursor,
-  .cursor-dot {
-    display: none;
-  }
-
-  .popup-close,
-  .popup-input,
-  .btn-enviar {
-    cursor: pointer;
-  }
-}
-
 /* =====================================================
-  CURSOR
-===================================================== */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: width 0.3s var(--transition), height 0.3s var(--transition), opacity 0.3s;
-  mix-blend-mode: multiply;
-}
-
-.cursor--hover {
-  width: 60px;
-  height: 60px;
-  background: rgba(184, 154, 106, 0.08);
-}
-
-.cursor-dot {
-  position: fixed;
-  z-index: 10000;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--gold);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-/* =====================================================
-  POPUP
+   POPUP
 ===================================================== */
 .popup-overlay {
   position: fixed;
@@ -134,7 +81,7 @@ body {
   right: 20px;
   background: none;
   border: none;
-  cursor: none;
+  cursor: pointer;
   font-size: 14px;
   color: var(--text-light);
   letter-spacing: 0.05em;
@@ -215,7 +162,7 @@ body {
   color: var(--text);
   outline: none;
   transition: border-color 0.3s;
-  cursor: none;
+  cursor: text;
 }
 
 .popup-input::placeholder {
@@ -236,7 +183,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  cursor: none;
+  cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
 
@@ -253,7 +200,7 @@ body {
 }
 
 /* =====================================================
-  HEADER
+   HEADER
 ===================================================== */
 .header {
   position: fixed;
@@ -350,7 +297,7 @@ body {
 }
 
 /* =====================================================
-  HERO
+   HERO
 ===================================================== */
 .hero {
   min-height: 100vh;
@@ -625,7 +572,7 @@ body {
 }
 
 /* =====================================================
-  TICKER
+   TICKER
 ===================================================== */
 .ticker-wrap {
   background: var(--dark);
@@ -664,7 +611,7 @@ body {
 }
 
 /* =====================================================
-  GALLERY
+   GALLERY
 ===================================================== */
 .gallery-section {
   padding: 100px 48px 120px;
@@ -844,7 +791,7 @@ body {
 }
 
 /* =====================================================
-  VALUES SECTION
+   VALUES SECTION
 ===================================================== */
 .values-section {
   position: relative;
@@ -939,7 +886,7 @@ body {
 }
 
 /* =====================================================
-  CTA SECTION
+   CTA SECTION
 ===================================================== */
 .cta-section {
   padding: 130px 24px;
@@ -989,7 +936,7 @@ body {
 }
 
 /* =====================================================
-  FOOTER
+   FOOTER
 ===================================================== */
 .footer {
   background: var(--dark-mid);
@@ -1059,7 +1006,7 @@ body {
 }
 
 /* =====================================================
-  BOTÓN FLOTANTE WHATSAPP
+   BOTÓN FLOTANTE WHATSAPP
 ===================================================== */
 .wsp-float {
   position: fixed;
@@ -1106,7 +1053,7 @@ body {
 }
 
 /* =====================================================
-  SCROLL REVEAL
+   SCROLL REVEAL
 ===================================================== */
 .reveal {
   opacity: 0;
@@ -1121,7 +1068,7 @@ body {
 }
 
 /* =====================================================
-  BURGER MENU
+   HAMBURGER MENU
 ===================================================== */
 .menu-toggle {
   display: none;
@@ -1147,18 +1094,16 @@ body {
 .menu-toggle--open span:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
 }
-
 .menu-toggle--open span:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
 }
-
 .menu-toggle--open span:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
 /* =====================================================
-  RESPONSIVE
+   RESPONSIVE
 ===================================================== */
 @media (max-width: 900px) {
   .header {
